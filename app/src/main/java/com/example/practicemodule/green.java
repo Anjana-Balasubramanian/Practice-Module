@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class green extends AppCompatActivity {
 
     Button PlayMusic;
     Button blue;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_green);
 
         PlayMusic = (Button) findViewById(R.id.playaudio);
         blue = (Button) findViewById(R.id.blue);
@@ -49,22 +49,19 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        final MediaPlayer bluep= MediaPlayer.create(this,R.raw.blue);
+        final MediaPlayer greenp= MediaPlayer.create(this,R.raw.green);
         final MediaPlayer hurray = MediaPlayer.create(this,R.raw.hurray);
         final MediaPlayer wrong = MediaPlayer.create(this,R.raw.wrong);
         PlayMusic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bluep.start();
+                greenp.start();
             }
         });
         blue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                hurray.start();
-                Intent intent = new Intent(MainActivity.this,red.class);
-                startActivity(intent);
-
+                wrong.start();
             }
         });
         red.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +73,9 @@ public class MainActivity extends AppCompatActivity {
         green.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                wrong.start();
+                hurray.start();
+                Intent intent = new Intent(green.this,orange.class);
+                startActivity(intent);
             }
         });
         black.setOnClickListener(new View.OnClickListener() {

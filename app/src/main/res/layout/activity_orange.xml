@@ -188,7 +188,7 @@
             android:id="@+id/text_view_id"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Where is Blue" />
+            android:text="Where is Orange" />
     </LinearLayout>
 
 

@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class orange extends AppCompatActivity {
 
     Button PlayMusic;
     Button blue;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_orange);
 
         PlayMusic = (Button) findViewById(R.id.playaudio);
         blue = (Button) findViewById(R.id.blue);
@@ -49,28 +49,26 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        final MediaPlayer bluep= MediaPlayer.create(this,R.raw.blue);
+        final MediaPlayer orangep= MediaPlayer.create(this,R.raw.orange);
         final MediaPlayer hurray = MediaPlayer.create(this,R.raw.hurray);
         final MediaPlayer wrong = MediaPlayer.create(this,R.raw.wrong);
         PlayMusic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bluep.start();
+                orangep.start();
             }
         });
         blue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                hurray.start();
-                Intent intent = new Intent(MainActivity.this,red.class);
-                startActivity(intent);
-
+                wrong.start();
             }
         });
         red.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 wrong.start();
+
             }
         });
         green.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +86,9 @@ public class MainActivity extends AppCompatActivity {
         orange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                wrong.start();
+                hurray.start();
+                Intent intent = new Intent(orange.this,brown.class);
+                startActivity(intent);
             }
         });
         dgreen.setOnClickListener(new View.OnClickListener() {
